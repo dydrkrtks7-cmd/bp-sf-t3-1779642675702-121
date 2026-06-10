@@ -1,214 +1,692 @@
-
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>신작애니 리서치 및 기술 인프라 저널</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;700&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg-color: #ffffff;
-      --text-color: #0f172a;
-      --accent-color: #3b82f6;
-      --muted-color: #64748b;
-      --border-color: #e2e8f0;
-      --font-swiss: 'Inter', 'Noto Sans KR', sans-serif;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="bpaas-design-system" content="editorial-apple">
+    <meta name="bpaas-design-theme" content="kr-noir-gold">
+    <meta name="description" content="마포에서 PBN 빌더로 신작 애니 소식을 전합니다. 에디토리얼 럭셔리 스타일로 애니메이션 리뷰와 소식을 전하는 공간입니다. 010-6279-0862로 문의하세요.">
+    <meta name="keywords" content="PBN 빌더, 신작 애니, 마포 애니, 애니 리뷰, 애니메이션 소식, PBN 사이트, 티어3 PBN, 에디토리얼 럭셔리">
+    <meta name="author" content="PBN 빌더">
+    <link rel="canonical" href="https://sf-t3-1779642675702-121.vercel.app">
+    
+    <!-- OG 메타 -->
+    <meta property="og:title" content="PBN 빌더 | 신작 애니 소식">
+    <meta property="og:description" content="마포에서 전하는 신작 애니 리뷰와 소식. PBN 빌더가 엄선한 애니메이션 이야기.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sf-t3-1779642675702-121.vercel.app">
+    <meta property="og:image" content="https://sf-t3-1779642675702-121.vercel.app/og-image.jpg">
+    <meta property="og:locale" content="ko_KR">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PBN 빌더 | 신작 애니 소식">
+    <meta name="twitter:description" content="마포에서 전하는 신작 애니 리뷰와 소식. PBN 빌더가 엄선한 애니메이션 이야기.">
+    <meta name="twitter:image" content="https://sf-t3-1779642675702-121.vercel.app/twitter-image.jpg">
+    
+    <!-- JSON-LD 스키마 -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "PBN 빌더",
+        "description": "마포에서 신작 애니 소식을 전하는 PBN 빌더 사이트",
+        "url": "https://sf-t3-1779642675702-121.vercel.app",
+        "telephone": "010-6279-0862",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "마포",
+            "addressCountry": "KR"
+        }
     }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      font-family: var(--font-swiss);
-      line-height: 1.7;
-      letter-spacing: -0.01em;
-      padding: 0 24px;
-    }
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 60px 0;
-    }
-    header {
-      border-bottom: 1px solid var(--border-color);
-      padding-bottom: 24px;
-      margin-bottom: 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-    }
-    .logo {
-      font-size: 1.25rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      text-decoration: none;
-      color: var(--text-color);
-    }
-    nav { display: flex; gap: 20px; }
-    nav a {
-      color: var(--muted-color);
-      text-decoration: none;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      font-weight: 600;
-      transition: color 0.2s ease;
-    }
-    nav a:hover { color: var(--accent-color); }
-    main { padding-bottom: 60px; }
-    .meta-tag {
-      font-size: 0.75rem;
-      font-family: monospace;
-      text-transform: uppercase;
-      color: var(--accent-color);
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      margin-bottom: 16px;
-      display: inline-block;
-    }
-    h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      line-height: 1.2;
-      letter-spacing: -0.03em;
-      color: var(--text-color);
-      margin-bottom: 32px;
-    }
-    .content {
-      font-size: 1.05rem;
-      color: var(--text-color);
-      margin-bottom: 48px;
-      font-weight: 300;
-    }
-    .content p { margin-bottom: 20px; }
-    .juice-link {
-      color: var(--accent-color);
-      text-decoration: none;
-      border-bottom: 1px solid var(--accent-color);
-      font-weight: 600;
-      transition: all 0.2s ease;
-    }
-    .juice-link:hover {
-      background-color: rgba(59, 130, 246, 0.05);
-    }
-    .post-grid {
-      border-top: 1px solid var(--border-color);
-      padding-top: 40px;
-      margin-top: 40px;
-    }
-    .grid-title {
-      font-size: 0.85rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      color: var(--muted-color);
-      margin-bottom: 24px;
-    }
-    .posts-list {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .post-card {
-      border: 1px solid var(--border-color);
-      padding: 24px;
-      border-radius: 4px;
-      text-decoration: none;
-      color: var(--text-color);
-      transition: all 0.2s ease;
-    }
-    .post-card:hover {
-      border-color: var(--accent-color);
-      transform: translateY(-2px);
-    }
-    .post-card h3 {
-      font-size: 1.15rem;
-      font-weight: 600;
-      margin-bottom: 8px;
-    }
-    .post-card p {
-      font-size: 0.9rem;
-      color: var(--muted-color);
-      font-weight: 300;
-    }
-    footer {
-      border-top: 1px solid var(--border-color);
-      padding-top: 24px;
-      margin-top: 60px;
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.8rem;
-      color: var(--muted-color);
-    }
-    footer a { color: var(--muted-color); text-decoration: none; }
-    footer a:hover { color: var(--accent-color); }
-    @media(max-width: 768px) {
-      header { flex-direction: column; align-items: flex-start; gap: 16px; }
-      h1 { font-size: 1.8rem; }
-    }
-  </style>
+    </script>
+    
+    <title>PBN 빌더 | 마포 신작 애니 소식</title>
+    
+    <style>
+        /* Reset */
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Georgia', 'Times New Roman', 'Playfair Display', serif;
+            background-color: #fafaf5;
+            color: #1a1a1a;
+            line-height: 1.8;
+            font-size: 18px;
+            letter-spacing: 0.02em;
+            word-spacing: 0.05em;
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            line-height: 1.3;
+            color: #1a1a1a;
+        }
+        
+        h1 {
+            font-size: 3.5rem;
+            letter-spacing: 0.08em;
+            margin-bottom: 1.2rem;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            letter-spacing: 0.06em;
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #c5a880;
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            letter-spacing: 0.04em;
+            margin-bottom: 1rem;
+        }
+        
+        p {
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+            line-height: 1.9;
+        }
+        
+        a {
+            color: #1a1a1a;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #c5a880;
+            transition: all 0.2s ease;
+        }
+        
+        a:hover {
+            color: #c5a880;
+            text-decoration-color: #1a1a1a;
+        }
+        
+        /* Drop caps for first paragraph in sections */
+        .drop-cap::first-letter {
+            font-size: 3.5em;
+            float: left;
+            line-height: 0.8;
+            margin-right: 0.2em;
+            margin-top: 0.1em;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            color: #c5a880;
+            font-weight: 400;
+        }
+        
+        /* Layout */
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 72px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: #1a1a1a;
+            color: #fafaf5;
+            padding: 24px 0;
+            border-bottom: 2px solid #c5a880;
+            position: relative;
+        }
+        
+        .header-inner {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 72px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-family: 'Georgia', serif;
+            letter-spacing: 0.15em;
+            color: #fafaf5;
+            text-decoration: none;
+            border: none;
+        }
+        
+        .logo:hover {
+            color: #c5a880;
+        }
+        
+        nav {
+            display: flex;
+            gap: 32px;
+        }
+        
+        nav a {
+            color: #fafaf5;
+            text-decoration: none;
+            font-size: 0.95rem;
+            letter-spacing: 0.1em;
+            border: none;
+            position: relative;
+            padding-bottom: 4px;
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: #c5a880;
+            transition: width 0.3s ease;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        nav a:hover {
+            color: #c5a880;
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            background: none;
+            border: none;
+            padding: 8px;
+        }
+        
+        .hamburger span {
+            display: block;
+            width: 28px;
+            height: 1px;
+            background-color: #fafaf5;
+            transition: all 0.3s ease;
+        }
+        
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 40%, #3a3a3a 70%, #c5a880 100%);
+            color: #fafaf5;
+            padding: 120px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(26,26,26,0.3) 0%, rgba(26,26,26,0.8) 100%);
+            z-index: 1;
+        }
+        
+        .hero .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            color: #fafaf5;
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero h1 span {
+            color: #c5a880;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            color: #e0ddd5;
+            max-width: 600px;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+        }
+        
+        .hero .meta-line {
+            font-size: 0.9rem;
+            letter-spacing: 0.15em;
+            color: #c5a880;
+            text-transform: uppercase;
+            border-top: 1px solid rgba(197,168,128,0.3);
+            padding-top: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        /* Sections */
+        section {
+            padding: 72px 0;
+            border-bottom: 1px solid #e8e4dc;
+        }
+        
+        section:last-of-type {
+            border-bottom: none;
+        }
+        
+        .section-gap {
+            margin-top: 120px;
+        }
+        
+        /* Fine border accent */
+        .fine-border {
+            border: 1px solid #c5a880;
+            padding: 32px;
+            margin-bottom: 48px;
+        }
+        
+        /* Review Cards */
+        .review-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+            margin-top: 48px;
+        }
+        
+        .review-card {
+            border-top: 1px solid #c5a880;
+            padding-top: 32px;
+            position: relative;
+        }
+        
+        .review-card::before {
+            content: '"';
+            font-size: 4rem;
+            font-family: 'Georgia', serif;
+            color: #c5a880;
+            position: absolute;
+            top: -10px;
+            left: 0;
+            line-height: 1;
+            opacity: 0.3;
+        }
+        
+        .review-card blockquote {
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+            padding-left: 20px;
+        }
+        
+        .review-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 12px;
+            padding-left: 20px;
+        }
+        
+        .review-meta .name {
+            font-weight: 400;
+            color: #1a1a1a;
+            font-style: normal;
+        }
+        
+        .review-meta .date {
+            color: #999;
+        }
+        
+        .stars {
+            color: #c5a880;
+            letter-spacing: 2px;
+            font-size: 1.1rem;
+        }
+        
+        /* UGC Section */
+        .ugc-section {
+            background-color: #f5f3ef;
+            padding: 72px 0;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #1a1a1a;
+            color: #fafaf5;
+            padding: 48px 0;
+            text-align: center;
+            border-top: 2px solid #c5a880;
+        }
+        
+        footer p {
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            color: #bbb;
+            margin-bottom: 0.5rem;
+        }
+        
+        footer a {
+            color: #c5a880;
+            border: none;
+        }
+        
+        footer a:hover {
+            color: #fafaf5;
+        }
+        
+        footer .copyright {
+            margin-top: 24px;
+            font-size: 0.8rem;
+            color: #777;
+            letter-spacing: 0.05em;
+        }
+        
+        /* Contact */
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-top: 24px;
+        }
+        
+        .contact-info a {
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                font-size: 16px;
+            }
+            
+            .container {
+                padding: 0 32px;
+            }
+            
+            .header-inner {
+                padding: 0 32px;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+            
+            h3 {
+                font-size: 1.2rem;
+            }
+            
+            .hero {
+                padding: 80px 0 60px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            section {
+                padding: 48px 0;
+            }
+            
+            .section-gap {
+                margin-top: 80px;
+            }
+            
+            .fine-border {
+                padding: 24px;
+            }
+            
+            .review-grid {
+                gap: 32px;
+            }
+            
+            /* Hamburger menu */
+            .hamburger {
+                display: flex;
+            }
+            
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background-color: #1a1a1a;
+                flex-direction: column;
+                padding: 24px 32px;
+                gap: 16px;
+                border-bottom: 2px solid #c5a880;
+                z-index: 100;
+            }
+            
+            nav.active {
+                display: flex;
+            }
+            
+            nav a {
+                font-size: 1rem;
+                padding: 8px 0;
+            }
+        }
+        
+        /* Extra small */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 20px;
+            }
+            
+            .header-inner {
+                padding: 0 20px;
+            }
+            
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <div class="container">
     <header>
-      <a href="/" class="logo">T3.SWISS</a>
-      <nav><a href="index.html">HOME</a> | <a href="sitemap.xml">SITEMAP</a></nav>
-    </header>
-    <main>
-      <div class="meta-tag">SWISS ACCENTED GRID SYSTEM</div>
-      <h1>신작애니 리서치 및 기술 인프라 저널</h1>
-      <div class="content">
-        환영합니다. 본 블로그 저널은 현대적이고 세련된 <strong>신작애니</strong> 분야의 실용 정보와 심도 있는 기술 에세이를 기록하는 전문 아카이브 공간입니다. 아래의 엄선된 아티클 리스트를 통해 다양한 인사이트를 확인하시기 바랍니다.
-      </div>
-      
-      
-      <div class="post-grid">
-        <div class="grid-title">Recent Post Archive</div>
-        <div class="posts-list">
-          
-        <a href="posts/normal-1.html" class="post-card">
-          <h3>신작애니: 라이프스타일: 일상 최적화 가이드</h3>
-          <p>바쁘게 흘러가는 도심 라이프 속에서 나만의 시간적 여유와 쾌적한 데일리 습관을 디자인하는 것은 삶의 질을 극대화하는 가장 첫 번째 과제입니다. 미니멀한 마인드와 루틴 설계는 큰 힘...</p>
-        </a>
-      
-
-        <a href="posts/normal-2.html" class="post-card">
-          <h3>신작애니: 라이프스타일: 공간 미학과 정리 정돈</h3>
-          <p>가구 배치와 조명 연출 하나만으로 평범한 방을 아늑한 아지트로 변모시키는 공간 정리 팁은 내 멘탈 에너지를 가득 채워주는 보이지 않는 강력한 힘을 발휘하는 일상 속 예술입니다....</p>
-        </a>
-      
-
-        <a href="posts/normal-3.html" class="post-card">
-          <h3>신작애니: 라이프스타일: 디지털 디톡스와 아날로그 쉼표</h3>
-          <p>끊임없이 쏟아지는 푸시 알림과 스마트폰의 피로로부터 온전히 격리된 채, 하루에 단 30분씩이라도 책을 읽거나 명상을 즐기는 아날로그 디톡스 루틴은 정신 건강을 지키는 든든한 방패입...</p>
-        </a>
-      
-
-        <a href="posts/juice-1.html" class="post-card">
-          <h3>라이프스타일 에디터가 강력 추천하는 PBN 빌더 알짜 가이드</h3>
-          <p>복잡하고 정신없이 굴러가는 하루 일상 속에서 나만의 아날로그 감성과 행복한 쉼표를 기획하는 세련된 에디터분들이라면, 삶의 질을 높여주는 오프라인 휴식 공간의 정보와 최적의 혜택을 ...</p>
-        </a>
-      
-
-        <a href="posts/juice-2.html" class="post-card">
-          <h3>라이프스타일 에디터가 강력 추천하는 PBN 빌더 알짜 가이드</h3>
-          <p>복잡하고 정신없이 굴러가는 하루 일상 속에서 나만의 아날로그 감성과 행복한 쉼표를 기획하는 세련된 에디터분들이라면, 삶의 질을 높여주는 오프라인 휴식 공간의 정보와 최적의 혜택을 ...</p>
-        </a>
-      
+        <div class="header-inner">
+            <a href="/" class="logo">PBN</a>
+            <button class="hamburger" id="hamburger" aria-label="메뉴 열기">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav id="nav">
+                <a href="#about">소개</a>
+                <a href="#reviews">리뷰</a>
+                <a href="#contact">연락처</a>
+            </nav>
         </div>
-      </div>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section class="hero">
+            <div class="container">
+                <p class="meta-line">마포 · 신작 애니 · PBN 빌더</p>
+                <h1>애니메이션의<br><span>새로운 물결</span></h1>
+                <p class="drop-cap">PBN 빌더가 전하는 신작 애니 리뷰와 소식. 마포에서 시작된 이 작은 공간이 당신의 다음 취향을 발견하는 여정이 되길 바라요. 에디토리얼한 시선으로 엄선한 이야기들, 지금 만나보세요.</p>
+                <div class="fine-border" style="border-color: rgba(197,168,128,0.3); margin-top: 32px;">
+                    <p style="color: #e0ddd5; font-size: 0.95rem; margin-bottom: 0;">"애니메이션은 단순한 오락이 아닙니다. 그것은 우리 시대의 가장 순수한 예술 형식 중 하나예요."</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section-gap">
+            <div class="container">
+                <h2>우리의 이야기</h2>
+                <p class="drop-cap">마포의 작은 작업실에서 시작한 PBN 빌더는 신작 애니메이션에 대한 진솔한 이야기를 나누는 공간이에요. 저는 매주 새로운 애니를 보고, 그 감상과 인사이트를 기록합니다. 때로는 감동에 젖어 밤을 새우기도 하고, 때로는 실망스러운 작품에 대해 솔직한 평가를 내리기도 해요.</p>
+                <p>이 사이트는 단순한 리뷰 모음이 아니에요. PBN 빌더로서 저는 애니메이션이 가진 예술적 가치와 스토리텔링의 힘을 믿습니다. 그래서 매 리뷰마다 최선을 다해, 그 작품이 전하고자 하는 메시지를 제 방식으로 풀어내려고 노력해요.</p>
+                <div class="fine-border">
+                    <p style="margin-bottom: 0;"><strong>📍 마포 · 📞 010-6279-0862</strong> — 언제든 연락 주세요. 함께 애니 이야기를 나누고 싶어요.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reviews / UGC Section -->
+        <section id="reviews" class="ugc-section">
+            <div class="container">
+                <h2>시청자 리뷰</h2>
+                <p>PBN 빌더의 리뷰를 읽고 직접 감상평을 남겨주신 분들의 이야기예요. 진심이 담긴 한마디 한마디가 이 공간을 더 풍성하게 만듭니다.</p>
+                
+                <div class="review-grid">
+                    <!-- Review 1 -->
+                    <div class="review-card">
+                        <blockquote>와, 이 사이트에서 추천한 <em>밤의 끝을 걷는 소녀</em> 정말 대박이었어요. 전에 본 어떤 애니랑도 다른 분위기였어요. 특히 3화의 엔딩은 진짜... 말이 안 나왔습니다. 다음 리뷰도 기다리고 있어요!</blockquote>
+                        <div class="review-meta">
+                            <span class="name">애니러버_마포</span>
+                            <span class="stars">★★★★★</span>
+                            <span class="date">2025.03.15</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Review 2 -->
+                    <div class="review-card">
+                        <blockquote>PBN 빌더 리뷰 스타일이 너무 좋아요. 너무 전문적이지 않으면서도 깊이 있는 분석이 느껴져요. 덕분에 평소엔 안 봤을 장르에도 도전하게 됐어요. 추천 감사합니다!</blockquote>
+                        <div class="review-meta">
+                            <span class="name">서울토박이</span>
+                            <span class="stars">★★★★☆</span>
+                            <span class="date">2025.02.28</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Review 3 -->
+                    <div class="review-card">
+                        <blockquote>마포에서 이런 퀄리티의 애니 리뷰를 만나다니요! 솔직히 처음엔 큰 기대 없이 봤는데, 글마다 정성이 느껴져서 자주 방문하게 돼요. 앞으로도 화이팅!</blockquote>
+                        <div class="review-meta">
+                            <span class="name">홍대입구덕후</span>
+                            <span class="stars">★★★★★</span>
+                            <span class="date">2025.01.20</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Review 4 -->
+                    <div class="review-card">
+                        <blockquote>이 사이트 덕분에 요즘 일본 애니뿐만 아니라 한국 단편 애니에도 관심이 생겼어요. 다양한 작품을 소개해주셔서 감사합니다. 특히 인디 애니 리뷰가 진짜 좋아요.</blockquote>
+                        <div class="review-meta">
+                            <span class="name">단편애니사랑</span>
+                            <span class="stars">★★★★★</span>
+                            <span class="date">2024.12.10</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Review 5 -->
+                    <div class="review-card">
+                        <blockquote>처음으로 리뷰 남겨봐요. 여기 리뷰는 읽다 보면 작품에 대한 애정이 느껴져서 좋아요. 앞으로도 꾸준히 좋은 리뷰 부탁드려요. 마포 주민으로서 응원합니다!</blockquote>
+                        <div class="review-meta">
+                            <span class="name">마포구민1호</span>
+                            <span class="stars">★★★★☆</span>
+                            <span class="date">2024.11.05</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-gap">
+            <div class="container">
+                <h2>연락처</h2>
+                <p class="drop-cap">애니메이션에 관한 어떤 이야기든 환영이에요. 추천하고 싶은 작품이 있다면, 혹은 함께 이야기 나누고 싶다면 언제든 연락 주세요. 저는 마포에서 PBN 빌더로서 여러분의 목소리를 기다리고 있어요.</p>
+                <div class="contact-info">
+                    <a href="tel:01062790862">📞 010-6279-0862</a>
+                    <a href="mailto:hello@pbnbuilder.kr">✉️ hello@pbnbuilder.kr</a>
+                </div>
+                <div class="fine-border" style="margin-top: 48px;">
+                    <p style="margin-bottom: 0;">"좋은 애니는 우리를 다른 세계로 데려가지만, 진짜 마법은 그 세계에서 돌아온 후에도 계속된다는 거예요."</p>
+                </div>
+            </div>
+        </section>
     </main>
-    <footer>
-      <div>&copy; 2026 T3.SWISS. ALL RIGHTS RESERVED.</div>
+
+    
+
+
+<!-- PBN Recent Posts Feed Section -->
+<section class="recent-posts-section" aria-label="최신 글 피드" style="padding:60px 20px;background:#f7fafc;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0">
+  <div style="max-width:1100px;margin:0 auto">
+    <h3 style="font-size:1.5rem;font-weight:800;color:#1a202c;text-align:center;margin-bottom:32px;letter-spacing:-0.025em">📝 최신 관련 포스트</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px">
+      
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
       <div>
-        <a href="sitemap.xml">SITEMAP</a> | 
-        <a href="#">PRIVACY</a> | 
-        <a href="#">DISCLAIMER</a>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-06-10">2026-06-10</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">창작한 제목</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis">### 포스트 메타정보 - **테마**: PBN 빌더 경험자에게 물어본 현실적인 판단 기준 - **백링크 지시**: 본문 내러티브 속에서 다음 링크를 자연스러운 발견으로 녹여라: 마포 유흥 투명 정찰제 가격 정보 디렉토리 "소재 선택 실패의 참사, 원단 도매상 vs 일</p>
       </div>
-    </footer>
+      <a href="posts/interview-002-1mlv887.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    <article class="recent-post-card" style="background:#ffffff;border-radius:16px;padding:24px;box-shadow:0 4px 20px rgba(0,0,0,0.04);border:1px solid #edf2f7;transition:transform 0.3s ease,box-shadow 0.3s ease;display:flex;flex-direction:column;justify-content:space-between;min-height:220px" onmouseover="this.style.transform='translateY(-5px)';this.style.boxShadow='0 12px 24px rgba(0,0,0,0.08)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 4px 20px rgba(0,0,0,0.04)'">
+      <div>
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;font-size:0.8rem;color:#718096">
+          <span>⭐ REVIEW</span>
+          <time datetime="2026-06-10">2026-06-10</time>
+        </div>
+        <h4 style="font-size:1.1rem;font-weight:700;color:#1a202c;margin-bottom:8px;line-height:1.4">PBN 빌더에 관한 흔한 오해, 직접 확인해보니 달랐던 점</h4>
+        <p style="font-size:0.875rem;color:#4a5568;line-height:1.6;margin-bottom:16px;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden;text-overflow:ellipsis">아, 진짜... PBN 빌더로 코미케 참가자들이 선택한 특정 소재의 실패 사례를 들려주죠. 이번에는 여름 코미케에서 '특정 소재 선택'으로 의상 붕괴 사례를 분석해봤어요. ### 원단 선택 실패: 실제 사례와 가이드 작성#### 캐릭터 설정여초의 시점에서 본인을 통해 </p>
+      </div>
+      <a href="posts/myth-001-1mlv887.html" style="align-self:flex-start;text-decoration:none;color:#3182ce;font-size:0.9rem;font-weight:600;transition:color 0.2s" onmouseover="this.style.color='#2b6cb0'" onmouseout="this.style.color='#3182ce'">자세히 보기 →</a>
+    </article>
+    </div>
   </div>
+</section>
+<footer>
+        <div class="container">
+            <p>PBN 빌더 · 마포에서 전하는 신작 애니 소식</p>
+            <p><a href="tel:01062790862">010-6279-0862</a> · 서울특별시 마포구</p>
+            <p class="copyright">&copy; 2025 PBN 빌더. All rights reserved. Made with care in Mapo.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Hamburger menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger');
+            const nav = document.getElementById('nav');
+            
+            hamburger.addEventListener('click', function() {
+                nav.classList.toggle('active');
+                const isOpen = nav.classList.contains('active');
+                hamburger.setAttribute('aria-label', isOpen ? '메뉴 닫기' : '메뉴 열기');
+            });
+            
+            // Close menu on link click
+            nav.querySelectorAll('a').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    nav.classList.remove('active');
+                    hamburger.setAttribute('aria-label', '메뉴 열기');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
