@@ -1,356 +1,354 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="bpaas-design-system" content="editorial-apple">
-    <meta name="bpaas-design-theme" content="kr-noir-gold">
-    <meta name="description" content="마포에서 PBN 빌더로 신작 애니 소식을 전합니다. 에디토리얼 럭셔리 스타일로 애니메이션 리뷰와 소식을 전하는 공간입니다. 010-6279-0862로 문의하세요.">
-    <meta name="keywords" content="PBN 빌더, 신작 애니, 마포 애니, 애니 리뷰, 애니메이션 소식, PBN 사이트, 티어3 PBN, 에디토리얼 럭셔리">
-    <meta name="author" content="PBN 빌더">
-    <link rel="canonical" href="https://sf-t3-1779642675702-121.maphoshirts.com/blog.html">
-    <meta property="og:title" content="PBN 빌더 | 신작 애니 소식">
-    <meta property="og:description" content="마포에서 PBN 빌더로 신작 애니 소식을 전합니다. 에디토리얼 럭셔리 스타일로 애니메이션 리뷰와 소식을 전하는 공간입니다. 010-6279-0862로 문의하세요.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://sf-t3-1779642675702-121.maphoshirts.com/blog.html">
-    <meta property="og:locale" content="ko_KR">
-    <title>PBN 빌더 | 신작 애니 소식</title>
-    <style>
-        /* Reset */
-        *, *::before, *::after {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        html {
-            scroll-behavior: smooth;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-        body {
-            font-family: 'Georgia', 'Times New Roman', 'Noto Serif KR', serif;
-            background-color: #0a0a0a;
-            color: #e8e0d4;
-            line-height: 1.8;
-            font-size: 18px;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
-        /* Typography */
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Playfair Display', 'Georgia', serif;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            line-height: 1.2;
-            color: #f5e6c8;
-        }
-        h1 {
-            font-size: 3.2rem;
-            margin-bottom: 1.2rem;
-            border-bottom: 2px solid #c9a84c;
-            padding-bottom: 0.5rem;
-            display: inline-block;
-        }
-        h2 {
-            font-size: 2.2rem;
-            margin: 2.5rem 0 1.2rem;
-            color: #d4af37;
-        }
-        h3 {
-            font-size: 1.6rem;
-            margin: 2rem 0 1rem;
-            color: #c9b88a;
-        }
-        p {
-            margin-bottom: 1.4rem;
-            font-size: 1.05rem;
-            color: #d6cec0;
-        }
-        a {
-            color: #d4af37;
-            text-decoration: none;
-            border-bottom: 1px solid transparent;
-            transition: border-color 0.3s ease, color 0.3s ease;
-        }
-        a:hover {
-            color: #f5e6c8;
-            border-bottom-color: #d4af37;
-        }
-        /* Drop caps for first paragraph in sections */
-        .drop-cap::first-letter {
-            font-size: 3.8rem;
-            float: left;
-            margin-right: 0.5rem;
-            margin-top: 0.2rem;
-            line-height: 1;
-            font-family: 'Playfair Display', serif;
-            color: #d4af37;
-            font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-        /* Layout */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            width: 100%;
-        }
-        header {
-            background: linear-gradient(180deg, #0f0f0f 0%, #1a1a1a 100%);
-            padding: 1.5rem 0;
-            border-bottom: 1px solid #2a2a2a;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-        }
-        header .container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #d4af37;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            border: none;
-        }
-        .logo:hover {
-            color: #f5e6c8;
-            border: none;
-        }
-        nav {
-            display: flex;
-            gap: 2.5rem;
-            align-items: center;
-        }
-        nav a {
-            font-size: 0.95rem;
-            font-weight: 500;
-            color: #b8a88a;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            border: none;
-            transition: color 0.3s ease;
-        }
-        nav a:hover {
-            color: #d4af37;
-            border: none;
-        }
-        .hamburger-menu {
-            display: none;
-            flex-direction: column;
-            gap: 5px;
-            cursor: pointer;
-            background: none;
-            border: none;
-            padding: 5px;
-        }
-        .hamburger-menu span {
-            display: block;
-            width: 28px;
-            height: 2px;
-            background-color: #d4af37;
-            transition: all 0.3s ease;
-        }
-        main {
-            flex: 1;
-            padding: 4rem 0;
-        }
-        .hero {
-            text-align: center;
-            padding: 3rem 0 2rem;
-            margin-bottom: 3rem;
-            background: radial-gradient(circle at 50% 0%, rgba(212,175,55,0.08) 0%, transparent 60%);
-        }
-        .hero h1 {
-            font-size: 3.6rem;
-            border: none;
-            display: block;
-            margin-bottom: 0.5rem;
-        }
-        .hero .subtitle {
-            font-size: 1.2rem;
-            color: #a89878;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            font-family: 'Playfair Display', serif;
-        }
-        .article-card {
-            background: linear-gradient(135deg, #141414 0%, #1e1e1e 100%);
-            border: 1px solid #2a2a2a;
-            border-radius: 12px;
-            padding: 2.5rem;
-            margin-bottom: 2.5rem;
-            transition: border-color 0.3s ease, transform 0.3s ease;
-        }
-        .article-card:hover {
-            border-color: #d4af37;
-            transform: translateY(-3px);
-        }
-        .article-card time {
-            display: block;
-            font-size: 0.85rem;
-            color: #8a7a6a;
-            margin-bottom: 1rem;
-            letter-spacing: 1px;
-        }
-        .article-card h2 {
-            margin-top: 0;
-            font-size: 1.8rem;
-        }
-        .article-card h2 a {
-            color: #f5e6c8;
-            border: none;
-        }
-        .article-card h2 a:hover {
-            color: #d4af37;
-        }
-        .article-card p {
-            font-size: 1rem;
-            line-height: 1.7;
-        }
-        .article-card .read-more {
-            display: inline-block;
-            margin-top: 1rem;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #d4af37;
-            border-bottom: 1px solid #d4af37;
-            padding-bottom: 2px;
-        }
-        .article-card .read-more:hover {
-            color: #f5e6c8;
-            border-bottom-color: #f5e6c8;
-        }
-        .full-article {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem 0;
-        }
-        .full-article .meta {
-            font-size: 0.9rem;
-            color: #8a7a6a;
-            margin-bottom: 2rem;
-            border-bottom: 1px solid #2a2a2a;
-            padding-bottom: 1rem;
-            display: flex;
-            gap: 2rem;
-        }
-        .full-article .content {
-            font-size: 1.1rem;
-        }
-        .full-article .content p {
-            margin-bottom: 1.6rem;
-        }
-        .full-article .content blockquote {
-            border-left: 3px solid #d4af37;
-            padding-left: 1.5rem;
-            margin: 2rem 0;
-            font-style: italic;
-            color: #c9b88a;
-        }
-        footer {
-            background: #0f0f0f;
-            padding: 2.5rem 0;
-            text-align: center;
-            border-top: 1px solid #2a2a2a;
-            margin-top: 3rem;
-        }
-        footer p {
-            font-size: 0.9rem;
-            color: #6a5a4a;
-            margin-bottom: 0.5rem;
-        }
-        footer .tel-link {
-            display: inline-block;
-            margin-top: 0.5rem;
-            font-size: 1.1rem;
-            color: #d4af37;
-            border: 1px solid #d4af37;
-            padding: 0.5rem 1.5rem;
-            border-radius: 30px;
-            transition: all 0.3s ease;
-        }
-        footer .tel-link:hover {
-            background-color: #d4af37;
-            color: #0a0a0a;
-            border-color: #d4af37;
-        }
-        @media (max-width: 768px) {
-            body {
-                font-size: 16px;
-            }
-            .container {
-                padding: 0 1.2rem;
-            }
-            h1 {
-                font-size: 2.2rem;
-            }
-            h2 {
-                font-size: 1.6rem;
-            }
-            h3 {
-                font-size: 1.3rem;
-            }
-            .hero h1 {
-                font-size: 2.4rem;
-            }
-            nav {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: #0f0f0f;
-                padding: 1.5rem 2rem;
-                border-bottom: 1px solid #2a2a2a;
-                gap: 1.2rem;
-            }
-            nav.active {
-                display: flex;
-            }
-            .hamburger-menu {
-                display: flex;
-            }
-            header .container {
-                position: relative;
-            }
-            .article-card {
-                padding: 1.5rem;
-            }
-            .full-article .meta {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
-        }
-    </style>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="마포에서 PBN 빌더로 신작 애니 소식을 전합니다. 에디토리얼 럭셔리 스타일로 애니메이션 리뷰와 소식을 전하는 공간입니다.">
+ <meta name="keywords" content="PBN 빌더, 신작 애니, 마포 애니, 애니 리뷰, 애니메이션 소식, PBN 사이트, 티어3 PBN, 에디토리얼 럭셔리">
+ <meta name="author" content="PBN 빌더">
+ <link rel="canonical" href="https://sf-t3-1779642675702-121.maphoshirts.com/blog.html">
+ <meta property="og:title" content="PBN 빌더 | 신작 애니 소식">
+ <meta property="og:description" content="마포에서 PBN 빌더로 신작 애니 소식을 전합니다. 에디토리얼 럭셔리 스타일로 애니메이션 리뷰와 소식을 전하는 공간입니다.">
+ <meta property="og:type" content="website">
+ <meta property="og:url" content="https://sf-t3-1779642675702-121.maphoshirts.com/blog.html">
+ <meta property="og:locale" content="ko_KR">
+ <title>PBN 빌더 | 신작 애니 소식</title>
+ <style>
+ /* Reset */
+ *, *::before, *::after {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
+ }
+ html {
+ scroll-behavior: smooth;
+ -webkit-font-smoothing: antialiased;
+ -moz-osx-font-smoothing: grayscale;
+ }
+ body {
+ font-family: 'Georgia', 'Times New Roman', 'Noto Serif KR', serif;
+ background-color: #0a0a0a;
+ color: #e8e0d4;
+ line-height: 1.8;
+ font-size: 18px;
+ min-height: 100vh;
+ display: flex;
+ flex-direction: column;
+ }
+ /* Typography */
+ h1, h2, h3, h4, h5, h6 {
+ font-family: 'Playfair Display', 'Georgia', serif;
+ font-weight: 700;
+ letter-spacing: -0.02em;
+ line-height: 1.2;
+ color: #f5e6c8;
+ }
+ h1 {
+ font-size: 3.2rem;
+ margin-bottom: 1.2rem;
+ border-bottom: 2px solid #c9a84c;
+ padding-bottom: 0.5rem;
+ display: inline-block;
+ }
+ h2 {
+ font-size: 2.2rem;
+ margin: 2.5rem 0 1.2rem;
+ color: #d4af37;
+ }
+ h3 {
+ font-size: 1.6rem;
+ margin: 2rem 0 1rem;
+ color: #c9b88a;
+ }
+ p {
+ margin-bottom: 1.4rem;
+ font-size: 1.05rem;
+ color: #d6cec0;
+ }
+ a {
+ color: #d4af37;
+ text-decoration: none;
+ border-bottom: 1px solid transparent;
+ transition: border-color 0.3s ease, color 0.3s ease;
+ }
+ a:hover {
+ color: #f5e6c8;
+ border-bottom-color: #d4af37;
+ }
+ /* Drop caps for first paragraph in sections */
+ .drop-cap::first-letter {
+ font-size: 3.8rem;
+ float: left;
+ margin-right: 0.5rem;
+ margin-top: 0.2rem;
+ line-height: 1;
+ font-family: 'Playfair Display', serif;
+ color: #d4af37;
+ font-weight: 700;
+ text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+ }
+ /* Layout */
+ .container {
+ max-width: 1200px;
+ margin: 0 auto;
+ padding: 0 2rem;
+ width: 100%;
+ }
+ header {
+ background: linear-gradient(180deg, #0f0f0f 0%, #1a1a1a 100%);
+ padding: 1.5rem 0;
+ border-bottom: 1px solid #2a2a2a;
+ position: sticky;
+ top: 0;
+ z-index: 100;
+ backdrop-filter: blur(10px);
+ -webkit-backdrop-filter: blur(10px);
+ }
+ header .container {
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+ }
+ .logo {
+ font-family: 'Playfair Display', serif;
+ font-size: 1.8rem;
+ font-weight: 700;
+ color: #d4af37;
+ letter-spacing: 2px;
+ text-transform: uppercase;
+ border: none;
+ }
+ .logo:hover {
+ color: #f5e6c8;
+ border: none;
+ }
+ nav {
+ display: flex;
+ gap: 2.5rem;
+ align-items: center;
+ }
+ nav a {
+ font-size: 0.95rem;
+ font-weight: 500;
+ color: #b8a88a;
+ text-transform: uppercase;
+ letter-spacing: 1.5px;
+ border: none;
+ transition: color 0.3s ease;
+ }
+ nav a:hover {
+ color: #d4af37;
+ border: none;
+ }
+ .hamburger-menu {
+ display: none;
+ flex-direction: column;
+ gap: 5px;
+ cursor: pointer;
+ background: none;
+ border: none;
+ padding: 5px;
+ }
+ .hamburger-menu span {
+ display: block;
+ width: 28px;
+ height: 2px;
+ background-color: #d4af37;
+ transition: all 0.3s ease;
+ }
+ main {
+ flex: 1;
+ padding: 4rem 0;
+ }
+ .hero {
+ text-align: center;
+ padding: 3rem 0 2rem;
+ margin-bottom: 3rem;
+ background: radial-gradient(circle at 50% 0%, rgba(212,175,55,0.08) 0%, transparent 60%);
+ }
+ .hero h1 {
+ font-size: 3.6rem;
+ border: none;
+ display: block;
+ margin-bottom: 0.5rem;
+ }
+ .hero .subtitle {
+ font-size: 1.2rem;
+ color: #a89878;
+ letter-spacing: 3px;
+ text-transform: uppercase;
+ font-family: 'Playfair Display', serif;
+ }
+ .article-card {
+ background: linear-gradient(135deg, #141414 0%, #1e1e1e 100%);
+ border: 1px solid #2a2a2a;
+ border-radius: 12px;
+ padding: 2.5rem;
+ margin-bottom: 2.5rem;
+ transition: border-color 0.3s ease, transform 0.3s ease;
+ }
+ .article-card:hover {
+ border-color: #d4af37;
+ transform: translateY(-3px);
+ }
+ .article-card time {
+ display: block;
+ font-size: 0.85rem;
+ color: #8a7a6a;
+ margin-bottom: 1rem;
+ letter-spacing: 1px;
+ }
+ .article-card h2 {
+ margin-top: 0;
+ font-size: 1.8rem;
+ }
+ .article-card h2 a {
+ color: #f5e6c8;
+ border: none;
+ }
+ .article-card h2 a:hover {
+ color: #d4af37;
+ }
+ .article-card p {
+ font-size: 1rem;
+ line-height: 1.7;
+ }
+ .article-card .read-more {
+ display: inline-block;
+ margin-top: 1rem;
+ font-size: 0.9rem;
+ text-transform: uppercase;
+ letter-spacing: 2px;
+ color: #d4af37;
+ border-bottom: 1px solid #d4af37;
+ padding-bottom: 2px;
+ }
+ .article-card .read-more:hover {
+ color: #f5e6c8;
+ border-bottom-color: #f5e6c8;
+ }
+ .full-article {
+ max-width: 800px;
+ margin: 0 auto;
+ padding: 2rem 0;
+ }
+ .full-article .meta {
+ font-size: 0.9rem;
+ color: #8a7a6a;
+ margin-bottom: 2rem;
+ border-bottom: 1px solid #2a2a2a;
+ padding-bottom: 1rem;
+ display: flex;
+ gap: 2rem;
+ }
+ .full-article .content {
+ font-size: 1.1rem;
+ }
+ .full-article .content p {
+ margin-bottom: 1.6rem;
+ }
+ .full-article .content blockquote {
+ border-left: 3px solid #d4af37;
+ padding-left: 1.5rem;
+ margin: 2rem 0;
+ font-style: italic;
+ color: #c9b88a;
+ }
+ footer {
+ background: #0f0f0f;
+ padding: 2.5rem 0;
+ text-align: center;
+ border-top: 1px solid #2a2a2a;
+ margin-top: 3rem;
+ }
+ footer p {
+ font-size: 0.9rem;
+ color: #6a5a4a;
+ margin-bottom: 0.5rem;
+ }
+ footer .tel-link {
+ display: inline-block;
+ margin-top: 0.5rem;
+ font-size: 1.1rem;
+ color: #d4af37;
+ border: 1px solid #d4af37;
+ padding: 0.5rem 1.5rem;
+ border-radius: 30px;
+ transition: all 0.3s ease;
+ }
+ footer .tel-link:hover {
+ background-color: #d4af37;
+ color: #0a0a0a;
+ border-color: #d4af37;
+ }
+ @media (max-width: 768px) {
+ body {
+ font-size: 16px;
+ }
+ .container {
+ padding: 0 1.2rem;
+ }
+ h1 {
+ font-size: 2.2rem;
+ }
+ h2 {
+ font-size: 1.6rem;
+ }
+ h3 {
+ font-size: 1.3rem;
+ }
+ .hero h1 {
+ font-size: 2.4rem;
+ }
+ nav {
+ display: none;
+ flex-direction: column;
+ position: absolute;
+ top: 100%;
+ left: 0;
+ right: 0;
+ background: #0f0f0f;
+ padding: 1.5rem 2rem;
+ border-bottom: 1px solid #2a2a2a;
+ gap: 1.2rem;
+ }
+ nav.active {
+ display: flex;
+ }
+ .hamburger-menu {
+ display: flex;
+ }
+ header .container {
+ position: relative;
+ }
+ .article-card {
+ padding: 1.5rem;
+ }
+ .full-article .meta {
+ flex-direction: column;
+ gap: 0.5rem;
+ }
+ }
+ </style>
   <meta name="twitter:card" content="summary">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <a href="/" class="logo">PBN 빌더</a>
-            <button class="hamburger-menu" aria-label="메뉴 열기" onclick="this.parentElement.nextElementSibling.classList.toggle('active')">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <nav>
-                <a href="/">홈</a>
-                <a href="/blog">블로그</a>
-                <a href="/about">소개</a>
-                <a href="/contact">문의</a>
-            </nav>
-        </div>
-    </header>
+ <header>
+ <div class="container">
+ <a href="/" class="logo">PBN 빌더</a>
+ <button class="hamburger-menu" aria-label="메뉴 열기" onclick="this.parentElement.nextElementSibling.classList.toggle('active')">
+ 
+ 
+ 
+ </button>
+ <nav>
+ <a href="/">홈</a>
+ <a href="/blog">블로그</a>
+ <a href="/about">소개</a>
+ <a href="/contact">문의</a>
+ </nav>
+ </div>
+ </header>
 
 <main>
 <article class="hero">
@@ -391,7 +389,7 @@
 <p><strong>여러 작품을 동시에 봐도 괜찮을까요</strong> — 편성 시간이 겹치지 않는다면 무리 없이 병행할 수 있지만, 화수가 많은 작품은 시청 시간을 넉넉히 잡아두는 것이 좋습니다.</p>
 <h2>사이트 소개</h2>
 <p>이 블로그는 마포 지역을 기반으로 다양한 소식을 정리해 전하는 채널이며, PBN 빌더 구축 사례와 관련한 정보도 함께 다룹니다. 사이트 구성이나 운영 관련 문의는 아래 연락처로 받고 있습니다.</p>
-<p class="tel-link"><a href="tel:010-6279-0862">010-6279-0862</a></p>
+
 <a href="#" class="read-more">다른 소식 더 보기</a>
 </div>
 </section>
